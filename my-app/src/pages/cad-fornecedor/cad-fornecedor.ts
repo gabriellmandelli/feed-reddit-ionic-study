@@ -11,20 +11,21 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 export class CadFornecedorPage {
   dadosFornecedor: FormGroup;
 
-constructor(public navCtrl: NavController, 
-            public navParams: NavParams, 
-            private frmBuilder: FormBuilder) {
-              
-this.dadosFornecedor = this.frmBuilder.group({
-    nome:['', Validators.required],
-    sobreNome:['', Validators.required],
-    dataNascimento:['',Validators.required]
-  })		
-}
-
-ionViewDidLoad() {
-  console.log('ionViewDidLoad CadFornecedorPage');
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              private frmBuilder: FormBuilder) {
+                
+    this.dadosFornecedor = this.frmBuilder.group({
+      nome:['', Validators.required],
+      sobreNome:['', Validators.required],
+      dataNascimento:['',Validators.required]
+    })		
   }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad CadFornecedorPage');
+  }
+
   onSubmit(){
   }
 

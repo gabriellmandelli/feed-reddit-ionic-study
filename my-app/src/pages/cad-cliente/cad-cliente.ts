@@ -14,17 +14,19 @@ export class CadClientePage {
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               private frmBuilder: FormBuilder) {
+
     this.dadosCliente = this.frmBuilder.group({
       nome:['',Validators.required],
       sobreNome:['',Validators.required],
-      dataNascimento:['',Validators.required]  
+      dataNascimento:['',Validators.required],
+      cpfCliente:['',Validators.required]
     })
   }
-
-  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CadClientePage');
   }
+  onSubmit(){
 
+  }
 }

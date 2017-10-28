@@ -20,12 +20,12 @@
       <p>Sobrenome inválida.</p>
     </ion-item>	
     <ion-item>
-      <ion-label>Entrada do trabalho</ion-label>
+      <ion-label>Data nascimento:</ion-label>
       <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" formControlName="dataNascimento"></ion-datetime>
     </ion-item>
     <ion-item *ngIf="!dadosFornecedor.controls.dataNascimento.valid && dadosFornecedor.controls.dataNascimento.dirty ">
       <p>Data nascimento inválida.</p>
-      </ion-item>	
+    </ion-item>	
     <button ion-button block round type="submit" color="secondary">Salvar</button> 
   </form>
 </ion-content>
