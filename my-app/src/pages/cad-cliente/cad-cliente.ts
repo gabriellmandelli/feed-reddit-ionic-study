@@ -16,7 +16,8 @@ export class CadClientePage {
               private frmBuilder: FormBuilder) {
     this.dadosCliente = this.frmBuilder.group({
       nome:['',Validators.required],
-      sobreNome:['',Validators.required]
+      sobreNome:['',Validators.required],
+      dataNascimento:['',Validators.required]  
     })
   }
 
