@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
-IonicPage()
+@IonicPage()
 @Component({
   selector: 'page-cad-produto',
   templateUrl: 'cad-produto.html',

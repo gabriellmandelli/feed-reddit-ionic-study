@@ -5,6 +5,7 @@
 </ion-header>
 <ion-content padding>
   <form [formGroup]="dadosProduto" (ngSubmit)="onSubmit()">
+    
     <ion-item>
       <ion-label>Nome:</ion-label>
       <ion-input type="text" formControlName="nome"></ion-input>
@@ -12,27 +13,31 @@
     <ion-item *ngIf="!dadosProduto.controls.nome.valid && dadosProduto.controls.nome.dirty ">
       <p>Nome inválido.</p>
     </ion-item>	
+    
     <ion-item>
       <ion-label>Quantidade:</ion-label>
       <ion-input type="text" formControlName="quantidade"></ion-input>
     </ion-item>
     <ion-item *ngIf="!dadosProduto.controls.quantidade.valid && dadosProduto.controls.quantidade.dirty ">
-      <p>Sobrenome inválida.</p>
+      <p>Quantidade inválido.</p>
     </ion-item>	
+    
     <ion-item>
       <ion-label>Valor:</ion-label>
       <ion-input type="text" formControlName="valorProduto"></ion-input>
     </ion-item>
     <ion-item *ngIf="!dadosProduto.controls.valorProduto.valid && dadosProduto.controls.valorProduto.dirty ">
-      <p>Sobrenome inválida.</p>
-    </ion-item>	
+      <p>Valor inválido.</p>
+    </ion-item>
+
     <ion-item>
       <ion-label>Data cadastro:</ion-label>
       <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" formControlName="dataCadastro"></ion-datetime>
     </ion-item>
     <ion-item *ngIf="!dadosProduto.controls.dataCadastro.valid && dadosProduto.controls.dataCadastro.dirty ">
-      <p>Data nascimento inválida.</p>
-    </ion-item>	
+      <p>Data cadastro inválida.</p>
+    </ion-item
+    >	
     <button ion-button block round type="submit" color="secondary">Salvar</button> 
   </form>
 </ion-content>

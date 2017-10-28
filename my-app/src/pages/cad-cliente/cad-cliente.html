@@ -5,20 +5,23 @@
 </ion-header>
 <ion-content padding>
   <form [formGroup]="dadosCliente" (ngSubmit)="onSubmit()">
+
     <ion-item>
       <ion-label>Nome:</ion-label>
       <ion-input type="text" formControlName="nome"></ion-input>
     </ion-item>
     <ion-item *ngIf="!dadosCliente.controls.nome.valid && dadosCliente.controls.nome.dirty ">
-      <p>Nome inválida.</p>
+      <p>Nome inválido.</p>
     </ion-item>	
+
     <ion-item>
       <ion-label>Sobrenome:</ion-label>
       <ion-input type="text" formControlName="sobreNome"></ion-input>
     </ion-item>
     <ion-item *ngIf="!dadosCliente.controls.sobreNome.valid && dadosCliente.controls.sobreNome.dirty ">
-      <p>Sobrenome inválida.</p>
+      <p>Sobrenome inválido.</p>
     </ion-item>	
+
     <ion-item>
       <ion-label>Data Nascimento:</ion-label>
       <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" formControlName="dataNascimento"></ion-datetime>
@@ -26,13 +29,15 @@
     <ion-item *ngIf="!dadosCliente.controls.dataNascimento.valid && dadosCliente.controls.dataNascimento.dirty ">
       <p>Data nascimento inválida.</p>
     </ion-item>	
+
     <ion-item>
       <ion-label>CPF:</ion-label>
-      <ion-input displayFormat="000.000.000-00" pickerFormat="### #### ### ##" formControlName="cpfCliente" ></ion-input>
+      <ion-input displayMAask="000.000.000-00" pickerFormat="### #### ### ##" formControlName="cpfCliente" ></ion-input>
     </ion-item>
     <ion-item *ngIf="!dadosCliente.controls.cpfCliente.valid && dadosCliente.controls.cpfCliente.dirty ">
       <p>CPF inválido.</p>
     </ion-item>	
+
     <button ion-button block round type="submit" color="secondary">Salvar</button> 
   </form>
 </ion-content>
