@@ -18,7 +18,8 @@ export class CadProdutoPage {
     this.dadosProduto = this.frmBuilder.group({
       nome:['',Validators.required],
       quantidade:['',Validators.required],
-      valorProduto:['',Validators.required]
+      valorProduto:['',Validators.required],
+      dataNascimento:['',Validators.required]
     })
   }
 
