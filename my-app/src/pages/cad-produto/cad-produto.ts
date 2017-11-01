@@ -19,7 +19,7 @@ export class CadProdutoPage {
       nome:['',Validators.required],
       quantidade:['',Validators.required],
       valorProduto:['',Validators.required],
-      dataNascimento:['',Validators.required]
+      dataCadastro:['',Validators.required]
     })
   }
 

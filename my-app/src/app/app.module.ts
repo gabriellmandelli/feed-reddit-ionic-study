@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { CadFornecedorPage } from '../pages/cad-fornecedor/cad-fornecedor';
 import { CadClientePage } from  '../pages/cad-cliente/cad-cliente';
+import { CadProdutoPage } from  '../pages/cad-produto/cad-produto';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,7 +22,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     CadFornecedorPage,
-    CadClientePage
+    CadClientePage,
+    CadProdutoPage
   ],
 
   imports: [
@@ -37,7 +39,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     CadFornecedorPage,
-    CadClientePage
+    CadClientePage,
+    CadProdutoPage
   ],
   providers: [
     StatusBar,
