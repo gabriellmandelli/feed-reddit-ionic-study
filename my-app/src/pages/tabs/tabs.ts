@@ -18,6 +18,7 @@ export class TabsPage {
   tab4Root = CadFornecedorPage;
   tab5Root = CadClientePage;
   tab6Root = CadProdutoPage;
+
   constructor() {
 
   }
