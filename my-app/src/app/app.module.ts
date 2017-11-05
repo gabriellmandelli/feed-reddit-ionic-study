@@ -14,7 +14,7 @@ import { CadProdutoPage } from '../pages/cad-produto/cad-produto';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { RedditServiceProvider } from '../providers/reddit-service/reddit-service';
+import { RedditService } from '../providers/reddit-service/reddit-service';
 
 @NgModule({
   declarations: [
@@ -49,7 +49,7 @@ import { RedditServiceProvider } from '../providers/reddit-service/reddit-servic
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    RedditServiceProvider
+    RedditService
   ]
 })
 export class AppModule {}

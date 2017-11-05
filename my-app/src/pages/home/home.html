@@ -1,8 +1,20 @@
 <!--  -->
 <ion-header>
-   <ion-navbar>
-    <ion-title>My Feed Reader</ion-title>
-    <!-- Filtro -->
+  <ion-navbar>
+    <ion-buttons start>
+      <ion-title>My Feed Reader</ion-title>
+    </ion-buttons>
+    <!-- Filtro por Busca -->
+    <ion-buttons start>
+      <ion-searchbar 
+        [(ngModel)]="searchTerm"
+        [formControl]="searchTermControl"
+        [showCancelButton]=true
+        (ionInput)="filterItems()" 
+        placeholder="Type here..." >
+      </ion-searchbar>
+    </ion-buttons>
+    <!-- Filtro por tipo -->
     <ion-buttons end>
       <button ion-button icon-only (click)="showFilters()">
         <ion-icon name="funnel"></ion-icon>
@@ -21,8 +33,15 @@
         <img [src]="feed.data.thumbnail" >
       </ion-thumbnail>
       <h2>{{feed.data.title}}</h2>
-      <p>{{feed.data.domain}}</p>
-    </button>
+      <div [ngSwitch]=feed.data.subreddit.toLowerCase()>
+          <p *ngSwitchCase="'askreddit'"><ion-icon name="help-circle"></ion-icon> {{feed.data.domain}}</p>
+          <p *ngSwitchCase="'gaming'"><ion-icon name="logo-playstation"></ion-icon> {{feed.data.domain}}</p>
+          <p *ngSwitchCase="'music'"><ion-icon name="musical-notes"></ion-icon> {{feed.data.domain}}</p>
+          <p *ngSwitchCase="'movies'"><ion-icon name="film"></ion-icon> {{feed.data.domain}}</p>
+          <p *ngSwitchCase="'pics'"><ion-icon name="image"></ion-icon> {{feed.data.domain}}</p>
+          <p *ngSwitchDefault>{{feed.data.domain}}</p>
+        </div>
+      </button>
   </ion-list>
 
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
@@ -30,7 +49,7 @@
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 
-  <ion-refresher (ionRefresh)="doRefresh($event)">
+  <ion-refresher (ionRefresh)="doRefresh($event)" [pullMin]=90>
     <ion-refresher-content
       pullingIcon="arrow-dropdown"
       pullingText="Pull to refresh"
