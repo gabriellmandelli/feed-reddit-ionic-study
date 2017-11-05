@@ -1,17 +1,42 @@
+<!--  -->
 <ion-header>
-  <ion-navbar>
-    <ion-title>Sistema de Vendas</ion-title>
+   <ion-navbar>
+    <ion-title>My Feed Reader</ion-title>
+    <!-- Filtro -->
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showFilters()">
+        <ion-icon name="funnel"></ion-icon>
+      </button>
+    </ion-buttons> 
   </ion-navbar>
+  <ion-icon name="funnel" [style.color]="hasFilter ? 'orange' : 'inherit'">
+  </ion-icon>
 </ion-header>
+<!--  -->
+<ion-content>
 
-<ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let feed of feeds">
+    <button ion-item *ngFor="let feed of feeds" (click)="itemSelected(feed.data.url)" >
       <ion-thumbnail item-left>
         <img [src]="feed.data.thumbnail" >
       </ion-thumbnail>
       <h2>{{feed.data.title}}</h2>
       <p>{{feed.data.domain}}</p>
-    </ion-item>
+    </button>
   </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
 </ion-content>
